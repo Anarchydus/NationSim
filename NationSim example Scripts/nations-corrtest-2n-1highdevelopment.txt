@@ -1,0 +1,72 @@
+"#" 
+"Format is: "
+
+"Random seed" "-9007199254740992 to 9007199254740992, 0 for random"
+"Number of Reruns" 0
+"Number of Nations" 0
+"Number of Resources" 0
+"Timespan to use for statistics" 0
+"Price for upgrading technology" 0
+"Minimum Crude Birthrate" 0
+"Maximum Crude Birthrate" 0
+"Resources in use (name and sector(1-4))" [["Apples" 1] ["Pears" 1]]
+
+"Name of Nation 1" "Germany"
+"Starting wealth of Nation 1" [100]
+"Starting Population of Nation 1" [200]
+"Starting Labor of Nation 1" [200]
+"Starting Amounts of Resources of Nation 1" [[100 200]]
+"Starting Technology levels for each resource of Nation 1" [[0.23 3.4]]
+"Starting Desires for each resource of Nation 2" [[0.1 0.23]]
+"Ethics of Nation 1 (Name and Percentage)" [["Mercantile" 0] ["Education" 0]] 
+"Initial Tax rate of Nation 1" [0]
+"Initial approval of Nation 1's government" [0]
+"Initial Budget division of nation 1" [[0 0]]
+"Name of Nation 2" "France"
+"Etc"
+
+"Date of scheduled Execution for command 1 (int)" 0
+"Code to be executed for command 1 (String on one line)" "Netlogo code"
+"Date of scheduled Execution for command 2 (int)" 0
+"Etc"
+
+"~ signifies that everything after is to be read as one string and fed to the program."
+"> signifies that everything after is a reporter to be read by the program and the result of which will be the final value"
+"| marks a predicate with 2 values, the first being the result if the predicate returns true, the second if it returns false"
+"z indicates a predicate with two lists as values. The first list will have it's items multiplied with a mutator which is listed after them, and each item will be multiplied while the mutator has a value determined by the list of counters following, specifically item 0 will be mutated while mutator is between item 0 and item 1 of counter."
+"#"	
+
+1337
+430
+2
+6
+5
+"|" "runs > 0 and runs <= 10"  ["250 * runs" 1000]
+"|" "runs > 10 and runs <= 20" [" 2 * (runs - 10)" 14]
+"|" "runs > 20 and runs <= 30" ["10 + (3 * (runs - 20))" 27]
+[["A" 1] ["B" 1] ["C" 2] ["D" 2] ["E" 3] ["F" 3]]
+"Germany"
+"|" "runs > 30 and runs <= 40" ["list 500 * (runs - 30)" [1000]]
+"|" "runs > 40 and runs <= 50" ["list 500 * (runs - 40)" [4000]]
+"|" "runs > 40 and runs <= 50" ["list 500 * (runs - 40)" [4000]]
+[[100 100 100 100 100 100]] 
+"z" "runs > 50 and runs <= 110" [[0.3 0.3 0.3 0.3 0.3 0.3]] [[1.3 1.1 1.2 2.0 1.1 1.2]] "runs" [50 60 70 80 90 100 110] 
+"z" "runs > 110 and runs <= 170" [[0.1 0.1 0.1 0.1 0.1 0.1]] [[0.4 0.2 0.3 0.75 0.2 0.8]] "runs" [110 120 130 140 150 160 170]
+"z" "runs > 170 and runs <= 200" [["Education" 10] ["Welfare" 10] ["Mercantile" 10]] [["Education" 50] ["Welfare" 50] ["Mercantile" 50]] "runs" [170 180 190 200]
+"|" "runs > 200 and runs <= 210" ["list 5 * (runs - 200)" [50]]
+"|" "runs > 210 and runs <= 220" ["list 10 * (runs - 210)" [100]]
+"|" "runs > 220 and runs <= 230" ["0.1 * (runs - 220)" 66]
+"#"
+"End Nation 1" 
+"#"
+"France"
+"|" "runs > 230 and runs <= 240" ["list 175 * (runs - 230)" [1000]]
+"|" "runs > 240 and runs <= 250" ["list 500 * (runs - 240)" [4000]]
+"|" "runs >	240 and runs <= 250" ["list 500 * (runs - 240)" [4000]]
+[[100 100 100 100 100 100]]
+"z" "runs > 250 and runs <= 310" [[0.1 0.1 0.1 0.1 0.1 0.1]] [[0.5 0.6 0.5 0.6 0.6 1.0]] "runs" [250 260 270 280 290 300 310] 
+"z" "runs > 310 and runs <= 370" [[0.1 0.1 0.1 0.1 0.1 0.1]] [[0.75 0.2 0.8 0.4 0.2 0.3]] "runs" [310 320 330 340 350 360 370]
+"z" "runs > 370 and runs <= 400" [["Education" 10] ["Welfare" 10] ["Mercantile" 10]] [["Education" 50] ["Welfare" 50] ["Mercantile" 50]] "runs" [370 380 390 400]
+"|" "runs > 400 and runs <= 410" ["list 5 * (runs - 400)" [50]]
+"|" "runs > 410 and runs <= 420" ["list 10 * (runs - 410)" [50]]
+"|" "runs > 420 and runs <= 430" ["10 * (runs - 420)" 50]
